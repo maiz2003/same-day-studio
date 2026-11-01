@@ -50,6 +50,9 @@
   .info b{font-size:.98rem;line-height:1.45;overflow-wrap:anywhere}
   .en{font-size:.74rem;color:var(--muted);direction:ltr;text-align:right;overflow-wrap:anywhere}
   .desc{font-size:.8rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
+  .meta{font-size:.78rem;color:var(--green2);font-weight:500;margin-top:3px}
+  .dg{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);margin-top:4px}
+  .dg select{font:inherit;border:1px solid var(--line);border-radius:10px;padding:2px 8px;background:#fff;color:var(--ink)}
   .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;margin-top:auto;padding-top:8px}
   .price{font-weight:700;color:var(--blush);white-space:nowrap}
   .add{border:0;background:var(--green);color:#fff;border-radius:12px;height:36px;padding:0 .8rem;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
@@ -61,7 +64,7 @@
   .box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
   .box h3{font-size:1rem;margin-bottom:.3rem}
   .box p{color:var(--muted);font-size:.92rem}
-  iframe{width:100%;height:100%;min-height:220px;border:0;border-radius:18px}
+  iframe{width:100%;height:100%;min-height:220px;border:0;border-radius:18px;grid-column:1/-1}
   footer{color:var(--muted);font-size:.82rem;text-align:center;padding:28px 16px 8px}
 
   .cart{position:fixed;inset:auto 0 0 0;background:var(--green);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:.8rem;transform:translateY(110%);transition:transform .25s ease;z-index:30}
@@ -111,6 +114,10 @@
       <p>حديقة الزهرية، 1 شارع الجزيرة، الزمالك، القاهرة</p>
       <p style="margin-top:.6rem"><a href="https://www.google.com/maps/search/?api=1&query=30.0466202,31.2269539" target="_blank" rel="noopener">افتح في خرائط جوجل ←</a></p>
     </div>
+    <div class="box" id="delivery">
+      <h3>التوصيل</h3>
+      <p>مناطق التوصيل ورسومها ومواعيدها هتتضاف هنا.</p>
+    </div>
     <iframe title="خريطة The Plant Corner" loading="lazy" src="https://www.google.com/maps?q=30.0466202,31.2269539&z=16&output=embed"></iframe>
   </div>
 </section>
@@ -123,8 +130,8 @@
 </div>
 
 <script>
-const ITEMS = [{"ar": "بوكس LOVE", "en": "LOVE Rose & Chocolate Box", "d": "تنسيق رومانسي فاخر من الورد الأحمر الطبيعي داخل بوكس LOVE أنيق، مع قلب من شوكولاتة فيريرو روشي.", "p": 1800, "c": "بوكيهات وبوكسات", "img": "img/p1.jpg"}, {"ar": "وردة للأبد", "en": "Forever Rose", "d": "وردة طبيعية فاخرة من الإكوادور، تمت معالجتها بتقنية خاصة للحفاظ على جمالها ومظهرها الطبيعي لفترة طويلة، وتُقدم بتغليف أنيق لتكون هدية مميزة وذكرى تدوم.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p2.jpg"}, {"ar": "بوكيه الألوان المبهجة", "en": "Fresh Colors Bouquet", "d": "بوكيه مميز بتشكيلة من الزهور الطبيعية الملونة بدرجات الأصفر والأخضر والوردي، بتنسيق عصري مليء بالحيوية والبهجة.", "p": 850, "c": "بوكيهات وبوكسات", "img": "img/p3.jpg"}, {"ar": "بوكس الورد والشوكولاتة", "en": "Luxury Rose & Chocolate Box", "d": "بوكس فاخر يجمع بين الورد الأحمر الطبيعي وشوكولاتة فيريرو روشي، بتصميم أنيق وإضاءة رومانسية للمناسبات الخاصة.", "p": 1900, "c": "بوكيهات وبوكسات", "img": "img/p4.jpg"}, {"ar": "بوكيه الأناقة البنفسجية", "en": "Purple Elegance Bouquet", "d": "تنسيق أنيق من زهور الكريزانثيمم باللونين البنفسجي والأبيض، مع لمسات خضراء وتغليف بنفسجي راقٍ.", "p": 750, "c": "بوكيهات وبوكسات", "img": "img/p5.jpg"}, {"ar": "تنسيق الزهور الكبير", "en": "Grand Flower Arrangement", "d": "تنسيق كبير وفخم من الورد الأحمر والزهور الصفراء والبنفسجية والبيضاء مع الخضرة الطبيعية، مناسب للتهنئة والاستقبال والمناسبات.", "p": 2000, "c": "بوكيهات وبوكسات", "img": "img/p6.jpg"}, {"ar": "تنسيق زهور فاخر", "en": "Luxury Mixed Flower Arrangement", "d": "تنسيق فاخر وكبير من الليليوم والأنثوريوم والورد والكريزانثيمم والزهور الموسمية مع خضرة طبيعية غنية.", "p": 3700, "c": "بوكيهات وبوكسات", "img": "img/p7.jpg"}, {"ar": "تنسيق أبيض للمواساة", "en": "White Sympathy Arrangement", "d": "تنسيق هادئ وأنيق بدرجات الأبيض من الورد والكريزانثيمم والزهور البيضاء المتنوعة مع أوراق خضراء طبيعية.", "p": 1700, "c": "بوكيهات وبوكسات", "img": "img/p8.jpg"}, {"ar": "بوكيه كلاسيك مشكل", "en": "Classic Mixed Bouquet", "d": "بوكيه عصري من الكريزانثيمم الأحمر والأبيض والأخضر مع خضرة طبيعية وتغليف أنيق.", "p": 800, "c": "بوكيهات وبوكسات", "img": "img/p9.jpg"}, {"ar": "بوكيه نبيتي وأخضر", "en": "Burgundy & Green Bouquet", "d": "بوكيه مميز من الكريزانثيمم بدرجات النبيتي والأبيض والأخضر، منسق مع خضرة طبيعية وتغليف عصري.", "p": 850, "c": "بوكيهات وبوكسات", "img": "img/p10.jpg"}, {"ar": "بوكيه استوائي نبيتي", "en": "Tropical Burgundy Bouquet", "d": "تنسيق جريء يجمع الكريزانثيمم النبيتي والأبيض والأخضر مع أوراق المونستيرا والخضرة الاستوائية.", "p": 950, "c": "بوكيهات وبوكسات", "img": "img/p11.jpg"}, {"ar": "بوكيه كريزانثيمم وردي", "en": "Pink Chrysanthemum Bouquet", "d": "بوكيه مبهج من الكريزانثيمم بدرجات الوردي والبنفسجي والأبيض مع لمسات خضراء وتغليف كرافت أنيق.", "p": 900, "c": "بوكيهات وبوكسات", "img": "img/p12.jpg"}, {"ar": "بوكيه ورد أحمر وأخضر", "en": "Red Rose & Green Chrysanthemum Bouquet", "d": "بوكيه أنيق يجمع بين الورد الأحمر والكريزانثيمم الأخضر مع خضرة طبيعية وتغليف مزخرف مميز.", "p": 1050, "c": "بوكيهات وبوكسات", "img": "img/p13.jpg"}, {"ar": "جل مكافحة الصراصير", "en": "Source Kill Max", "d": "جل جاهز للاستخدام لمكافحة الصراصير، في عبوة سرنجة لسهولة التطبيق في الشقوق والزوايا والأماكن المستهدفة.", "p": 250, "c": "مستلزمات حدائق", "img": "img/p14.jpg"}, {"ar": "تيبرا SC", "en": "Tebra SC", "d": "مبيد حشري مركز معلق لمكافحة مجموعة من الآفات المنزلية والحشرية، ويُستخدم وفقًا لتعليمات الملصق المسجل على العبوة.", "p": 300, "c": "مستلزمات حدائق", "img": "img/p15.jpg"}, {"ar": "دلتا وان 5%", "en": "Delta One 5%", "d": "مبيد حشري مركز للاستخدام في برامج مكافحة الآفات، ويُستخدم بالجرعات وطريقة التطبيق الموضحة على العبوة.", "p": 250, "c": "مستلزمات حدائق", "img": "img/p16.jpg"}, {"ar": "دراسينا ماسنجانا", "en": "Dracaena Massangeana", "d": "نبات دراسينا داخلي مميز مزروع في أصيص سيراميك أبيض، مناسب للمكاتب والمنازل والهدايا.", "p": 650, "c": "نباتات", "img": "img/p17.jpg"}, {"ar": "تنسيق لاكي بامبو", "en": "Lucky Bamboo Arrangement", "d": "تنسيق أنيق من سيقان اللاكي بامبو داخل فازة زجاجية مربعة، مناسب للديكور الداخلي والهدايا.", "p": 1200, "c": "نباتات", "img": "img/p18.jpg"}, {"ar": "فيبرونيل ستار", "en": "Fibronil Star", "d": "مبيد حشري للاستخدام في برامج مكافحة الحشرات المنزلية والآفات المستهدفة، وفقًا لتعليمات الاستخدام المدونة على العبوة.", "p": 300, "c": "مستلزمات حدائق", "img": "img/p19.jpg"}, {"ar": "بالون رقم فضي", "en": "Silver Number Balloon", "d": "بالون فويل على شكل رقم باللون الفضي، مناسب لأعياد الميلاد والاحتفالات والمناسبات.", "p": 150, "c": "بالونات", "img": "img/p20.jpg"}, {"ar": "بالون رقم ذهبي", "en": "Gold Number Balloon", "d": "بالون فويل على شكل رقم باللون الذهبي، مناسب لأعياد الميلاد والاحتفالات والمناسبات.", "p": 150, "c": "بالونات", "img": "img/p21.jpg"}, {"ar": "مصيدة لاصقة للفئران", "en": "Mouse & Rat Glue Traps", "d": "مصيدة غراء جاهزة للاستخدام لمكافحة الفئران والقوارض في الأماكن الداخلية.", "p": 120, "c": "مستلزمات حدائق", "img": "img/p22.jpg"}, {"ar": "بالون رقم 1 فضي", "en": "Silver Number 1 Balloon", "d": "بالون فويل كبير على شكل رقم 1 باللون الفضي، مناسب لتنسيقات أعياد الميلاد والحفلات.", "p": 150, "c": "بالونات", "img": "img/p23.jpg"}, {"ar": "بوكيه جيبسوفيلا أبيض", "en": "Gypsophila Bouquet", "d": "بوكيه ناعم وأنيق من زهور الجيبسوفيلا البيضاء، مناسب للهدايا والمناسبات والتنسيقات الراقية.", "p": 800, "c": "بوكيهات وبوكسات", "img": "img/p24.jpg"}, {"ar": "بوكيه عروسة ورد أحمر", "en": "Red Rose Bridal Bouquet", "d": "بوكيه عروسة كلاسيكي من الورد الأحمر مع إطار من الجيبسوفيلا البيضاء وتشطيب ساتان أنيق.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p25.jpg"}, {"ar": "بالون رقم 1 ذهبي", "en": "Gold Number 1 Balloon", "d": "بالون فويل كبير على شكل رقم 1 باللون الذهبي، مناسب لأعياد الميلاد والاحتفالات.", "p": 150, "c": "بالونات", "img": "img/p26.jpg"}, {"ar": "بوكيه عروسة ورد أبيض", "en": "White Rose Bridal Bouquet", "d": "بوكيه عروسة أنيق من الورد الأبيض الطبيعي مع لمسات من الجيبسوفيلا وتشطيب كلاسيكي راقٍ.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p27.jpg"}];
-const CATS = ["بوكيهات وبوكسات", "نباتات", "بالونات", "مستلزمات حدائق"];
+const ITEMS = [{"ar": "بوكس LOVE", "en": "LOVE Rose & Chocolate Box", "d": "تنسيق رومانسي فاخر من الورد الأحمر الطبيعي داخل بوكس LOVE أنيق، مع قلب من شوكولاتة فيريرو روشي.", "p": 1800, "c": "بوكيهات وبوكسات", "img": "img/p1.jpg", "n": 25, "dg": false}, {"ar": "وردة للأبد", "en": "Forever Rose", "d": "وردة طبيعية فاخرة من الإكوادور، تمت معالجتها بتقنية خاصة للحفاظ على جمالها ومظهرها الطبيعي لفترة طويلة، وتُقدم بتغليف أنيق لتكون هدية مميزة وذكرى تدوم.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p2.jpg", "n": 1, "dg": false}, {"ar": "بوكيه الألوان المبهجة", "en": "Fresh Colors Bouquet", "d": "بوكيه مميز بتشكيلة من الزهور الطبيعية الملونة بدرجات الأصفر والأخضر والوردي، بتنسيق عصري مليء بالحيوية والبهجة.", "p": 850, "c": "بوكيهات وبوكسات", "img": "img/p3.jpg", "n": 12, "dg": false}, {"ar": "بوكس الورد والشوكولاتة", "en": "Luxury Rose & Chocolate Box", "d": "بوكس فاخر يجمع بين الورد الأحمر الطبيعي وشوكولاتة فيريرو روشي، بتصميم أنيق وإضاءة رومانسية للمناسبات الخاصة.", "p": 1900, "c": "بوكيهات وبوكسات", "img": "img/p4.jpg", "n": 15, "dg": false}, {"ar": "بوكيه الأناقة البنفسجية", "en": "Purple Elegance Bouquet", "d": "تنسيق أنيق من زهور الكريزانثيمم باللونين البنفسجي والأبيض، مع لمسات خضراء وتغليف بنفسجي راقٍ.", "p": 750, "c": "بوكيهات وبوكسات", "img": "img/p5.jpg", "n": 10, "dg": false}, {"ar": "تنسيق الزهور الكبير", "en": "Grand Flower Arrangement", "d": "تنسيق كبير وفخم من الورد الأحمر والزهور الصفراء والبنفسجية والبيضاء مع الخضرة الطبيعية، مناسب للتهنئة والاستقبال والمناسبات.", "p": 2000, "c": "بوكيهات وبوكسات", "img": "img/p6.jpg", "n": 40, "dg": false}, {"ar": "تنسيق زهور فاخر", "en": "Luxury Mixed Flower Arrangement", "d": "تنسيق فاخر وكبير من الليليوم والأنثوريوم والورد والكريزانثيمم والزهور الموسمية مع خضرة طبيعية غنية.", "p": 3700, "c": "بوكيهات وبوكسات", "img": "img/p7.jpg", "n": 50, "dg": false}, {"ar": "تنسيق أبيض للمواساة", "en": "White Sympathy Arrangement", "d": "تنسيق هادئ وأنيق بدرجات الأبيض من الورد والكريزانثيمم والزهور البيضاء المتنوعة مع أوراق خضراء طبيعية.", "p": 1700, "c": "بوكيهات وبوكسات", "img": "img/p8.jpg", "n": 40, "dg": false}, {"ar": "بوكيه كلاسيك مشكل", "en": "Classic Mixed Bouquet", "d": "بوكيه عصري من الكريزانثيمم الأحمر والأبيض والأخضر مع خضرة طبيعية وتغليف أنيق.", "p": 800, "c": "بوكيهات وبوكسات", "img": "img/p9.jpg", "n": 10, "dg": false}, {"ar": "بوكيه نبيتي وأخضر", "en": "Burgundy & Green Bouquet", "d": "بوكيه مميز من الكريزانثيمم بدرجات النبيتي والأبيض والأخضر، منسق مع خضرة طبيعية وتغليف عصري.", "p": 850, "c": "بوكيهات وبوكسات", "img": "img/p10.jpg", "n": 15, "dg": false}, {"ar": "بوكيه استوائي نبيتي", "en": "Tropical Burgundy Bouquet", "d": "تنسيق جريء يجمع الكريزانثيمم النبيتي والأبيض والأخضر مع أوراق المونستيرا والخضرة الاستوائية.", "p": 950, "c": "بوكيهات وبوكسات", "img": "img/p11.jpg", "n": 10, "dg": false}, {"ar": "بوكيه كريزانثيمم وردي", "en": "Pink Chrysanthemum Bouquet", "d": "بوكيه مبهج من الكريزانثيمم بدرجات الوردي والبنفسجي والأبيض مع لمسات خضراء وتغليف كرافت أنيق.", "p": 900, "c": "بوكيهات وبوكسات", "img": "img/p12.jpg", "n": 20, "dg": false}, {"ar": "بوكيه ورد أحمر وأخضر", "en": "Red Rose & Green Chrysanthemum Bouquet", "d": "بوكيه أنيق يجمع بين الورد الأحمر والكريزانثيمم الأخضر مع خضرة طبيعية وتغليف مزخرف مميز.", "p": 1050, "c": "بوكيهات وبوكسات", "img": "img/p13.jpg", "n": 10, "dg": false}, {"ar": "جل مكافحة الصراصير", "en": "Source Kill Max", "d": "جل جاهز للاستخدام لمكافحة الصراصير، في عبوة سرنجة لسهولة التطبيق في الشقوق والزوايا والأماكن المستهدفة.", "p": 250, "c": "مكافحة آفات", "img": "img/p14.jpg", "n": null, "dg": false}, {"ar": "تيبرا SC", "en": "Tebra SC", "d": "مبيد حشري مركز معلق لمكافحة مجموعة من الآفات المنزلية والحشرية، ويُستخدم وفقًا لتعليمات الملصق المسجل على العبوة.", "p": 300, "c": "مكافحة آفات", "img": "img/p15.jpg", "n": null, "dg": false}, {"ar": "دلتا وان 5%", "en": "Delta One 5%", "d": "مبيد حشري مركز للاستخدام في برامج مكافحة الآفات، ويُستخدم بالجرعات وطريقة التطبيق الموضحة على العبوة.", "p": 250, "c": "مكافحة آفات", "img": "img/p16.jpg", "n": null, "dg": false}, {"ar": "دراسينا ماسنجانا", "en": "Dracaena Massangeana", "d": "نبات دراسينا داخلي مميز مزروع في أصيص سيراميك أبيض، مناسب للمكاتب والمنازل والهدايا.", "p": 650, "c": "نباتات", "img": "img/p17.jpg", "n": null, "dg": false}, {"ar": "تنسيق لاكي بامبو", "en": "Lucky Bamboo Arrangement", "d": "تنسيق أنيق من سيقان اللاكي بامبو داخل فازة زجاجية مربعة، مناسب للديكور الداخلي والهدايا.", "p": 1200, "c": "نباتات", "img": "img/p18.jpg", "n": null, "dg": false}, {"ar": "فيبرونيل ستار", "en": "Fibronil Star", "d": "مبيد حشري للاستخدام في برامج مكافحة الحشرات المنزلية والآفات المستهدفة، وفقًا لتعليمات الاستخدام المدونة على العبوة.", "p": 300, "c": "مكافحة آفات", "img": "img/p19.jpg", "n": null, "dg": false}, {"ar": "بالون رقم فضي", "en": "Silver Number Balloon", "d": "بالون فويل على شكل رقم باللون الفضي، مناسب لأعياد الميلاد والاحتفالات والمناسبات.", "p": 150, "c": "بالونات", "img": "img/p20.jpg", "n": null, "dg": true}, {"ar": "بالون رقم ذهبي", "en": "Gold Number Balloon", "d": "بالون فويل على شكل رقم باللون الذهبي، مناسب لأعياد الميلاد والاحتفالات والمناسبات.", "p": 150, "c": "بالونات", "img": "img/p21.jpg", "n": null, "dg": true}, {"ar": "مصيدة لاصقة للفئران", "en": "Mouse & Rat Glue Traps", "d": "مصيدة غراء جاهزة للاستخدام لمكافحة الفئران والقوارض في الأماكن الداخلية.", "p": 120, "c": "مكافحة آفات", "img": "img/p22.jpg", "n": null, "dg": false}, {"ar": "بالون رقم 1 فضي", "en": "Silver Number 1 Balloon", "d": "بالون فويل كبير على شكل رقم 1 باللون الفضي، مناسب لتنسيقات أعياد الميلاد والحفلات.", "p": 150, "c": "بالونات", "img": "img/p23.jpg", "n": null, "dg": false}, {"ar": "بوكيه جيبسوفيلا أبيض", "en": "Gypsophila Bouquet", "d": "بوكيه ناعم وأنيق من زهور الجيبسوفيلا البيضاء، مناسب للهدايا والمناسبات والتنسيقات الراقية.", "p": 800, "c": "بوكيهات وبوكسات", "img": "img/p24.jpg", "n": null, "dg": false}, {"ar": "بوكيه عروسة ورد أحمر", "en": "Red Rose Bridal Bouquet", "d": "بوكيه عروسة كلاسيكي من الورد الأحمر مع إطار من الجيبسوفيلا البيضاء وتشطيب ساتان أنيق.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p25.jpg", "n": 20, "dg": false}, {"ar": "بالون رقم 1 ذهبي", "en": "Gold Number 1 Balloon", "d": "بالون فويل كبير على شكل رقم 1 باللون الذهبي، مناسب لأعياد الميلاد والاحتفالات.", "p": 150, "c": "بالونات", "img": "img/p26.jpg", "n": null, "dg": false}, {"ar": "بوكيه عروسة ورد أبيض", "en": "White Rose Bridal Bouquet", "d": "بوكيه عروسة أنيق من الورد الأبيض الطبيعي مع لمسات من الجيبسوفيلا وتشطيب كلاسيكي راقٍ.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p27.jpg", "n": 15, "dg": false}];
+const CATS = ["بوكيهات وبوكسات", "نباتات", "بالونات", "مكافحة آفات"];
 const WA_NUMBER = "";   // client's WhatsApp, e.g. "2010xxxxxxxx", set on activation
 const PREVIEW = true;   // true = preview banner + ordering locked until the first payment
 const FEATURED = [0, 6, 24]; // hero photos by catalog index: LOVE box, luxury arrangement, red bridal
@@ -153,6 +160,8 @@ main.innerHTML = CATS.map((c, ci) => `
         <div class="info">
           <b>${it.ar}</b><span class="en">${it.en}</span>
           <span class="desc">${it.d}</span>
+          ${it.n ? `<span class="meta">🌸 ${it.n === 1 ? "وردة واحدة" : `حوالي ${it.n} زهرة`}</span>` : ""}
+          ${it.dg ? `<label class="dg">اختار الرقم <select data-i="${i}" aria-label="رقم البالون">${[...Array(10).keys()].map(d => `<option>${d}</option>`).join("")}</select></label>` : ""}
           <div class="foot"><span class="price">${money(it.p)}</span><span class="ctl" data-i="${i}"></span></div>
         </div>
       </article>`).join("")}</div></section>`).join("");
@@ -164,8 +173,10 @@ tabs.addEventListener("click", e => {
   document.getElementById(b.dataset.t).scrollIntoView({behavior: "smooth"});
 });
 
+// cart key = item index, plus "#digit" for number balloons so each digit is its own line
+const keyOf = i => { const s = main.querySelector(`select[data-i="${i}"]`); return s ? `${i}#${s.value}` : `${i}`; };
 function renderCtl(i){
-  const q = cart[i] || 0, el = main.querySelector(`.ctl[data-i="${i}"]`);
+  const q = cart[keyOf(i)] || 0, el = main.querySelector(`.ctl[data-i="${i}"]`);
   el.innerHTML = q ? `<span class="step"><button data-a="-1" aria-label="شيل واحد">−</button><span>${q}</span><button data-a="1" aria-label="زوّد واحد">+</button></span>`
                    : `<button class="add" data-a="1" aria-label="أضف ${ITEMS[i].ar}">+ أضف</button>`;
 }
@@ -173,20 +184,25 @@ ITEMS.forEach((_, i) => renderCtl(i));
 
 main.addEventListener("click", e => {
   const b = e.target.closest("button[data-a]"); if (!b) return;
-  const i = +b.closest(".ctl").dataset.i;
-  cart[i] = Math.max(0, (cart[i] || 0) + +b.dataset.a);
-  if (!cart[i]) delete cart[i];
+  const i = +b.closest(".ctl").dataset.i, k = keyOf(i);
+  cart[k] = Math.max(0, (cart[k] || 0) + +b.dataset.a);
+  if (!cart[k]) delete cart[k];
   renderCtl(i);
-  const lines = Object.entries(cart).map(([k, q]) => [ITEMS[k], q]);
+  updateCart();
+});
+main.addEventListener("change", e => { if (e.target.matches("select[data-i]")) renderCtl(+e.target.dataset.i); });
+
+function updateCart(){
+  const lines = Object.entries(cart).map(([k, q]) => { const [i, d] = k.split("#"); return [ITEMS[i], q, d]; });
   const total = lines.reduce((s, [it, q]) => s + it.p * q, 0);
   const count = lines.reduce((s, [, q]) => s + q, 0);
   document.getElementById("sum").textContent = `${count} منتج · ${money(total)}`;
   document.getElementById("waOrder").href = waLink(
     "طلب جديد من موقع The Plant Corner 🌷\n" +
-    lines.map(([it, q]) => `• ${q} × ${it.ar} (${money(it.p * q)})`).join("\n") +
+    lines.map(([it, q, d]) => `• ${q} × ${it.ar}${d !== undefined ? ` (رقم ${d})` : ""} (${money(it.p * q)})`).join("\n") +
     `\nالإجمالي: ${money(total)}\n\nالاسم:\nالعنوان:\nميعاد التوصيل:`);
   document.getElementById("cart").classList.toggle("on", count > 0);
-});
+}
 </script>
 </body>
 </html>
