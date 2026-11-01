@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Same-Day Studio | موقع لمشروعك النهارده</title>
+<meta name="description" content="موقع موبايل لمشروعك بالمنيو والطلب على واتساب، تشوفه قبل ما تدفع وبيبقى جاهز في نفس اليوم.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f6f7f9;--card:#fff;--ink:#14171c;--muted:#5d6672;--line:#e3e6eb;--brand:#1d4ed8;--wa:#1f9d55}
+  *{box-sizing:border-box;margin:0;padding:0}
+  [hidden]{display:none!important}
+  body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  header{padding:56px 0 40px}
+  .logo{font-weight:700;letter-spacing:.02em;color:var(--brand)}
+  h1{font-size:clamp(2rem,7vw,3rem);line-height:1.25;margin:.8rem 0 .6rem}
+  .lead{color:var(--muted);font-size:1.08rem;max-width:40ch}
+  .btns{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}
+  .btn{display:inline-flex;align-items:center;padding:.75rem 1.2rem;border-radius:12px;font-weight:700;text-decoration:none}
+  .btn-wa{background:var(--wa);color:#fff}
+  .btn-line{border:1px solid var(--line);background:var(--card);color:var(--ink)}
+  section{padding:32px 0}
+  h2{font-size:1.4rem;margin-bottom:1rem}
+  .steps{display:grid;gap:.8rem;grid-template-columns:repeat(3,1fr);counter-reset:s}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}
+  .step::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;margin-bottom:.4rem}
+  .step p{color:var(--muted);font-size:.93rem}
+  .plans{display:grid;gap:.8rem}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem;display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;align-items:start}
+  .plan.main{border:2px solid var(--brand)}
+  .plan h3{font-size:1.08rem}
+  .plan .p{font-weight:700;font-size:1.15rem;white-space:nowrap}
+  .plan ul{grid-column:1/-1;color:var(--muted);font-size:.93rem;padding-inline-start:1.1rem;margin-top:.3rem}
+  .pay{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem}
+  .pay p{color:var(--muted)}
+  .pay b{color:var(--ink)}
+  .pay a{color:var(--brand)}
+  footer{color:var(--muted);font-size:.85rem;padding:32px 16px;text-align:center}
+  @media (max-width:600px){.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="logo">Same-Day Studio</div>
+    <h1>موقع لمشروعك النهارده.<br>تشوفه الأول، وبعدين تدفع.</h1>
+    <p class="lead">موقع موبايل فيه المنيو أو المنتجات، وزرار طلب على واتساب، والعنوان والمواعيد. لينك واحد تحطه في البايو وتبعته لأي زبون.</p>
+    <div class="btns">
+      <a class="btn btn-wa" id="waBtn" hidden href="https://wa.me/{{WHATSAPP_NUMBER}}?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%85%D9%88%D9%82%D8%B9%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A">كلمني على واتساب</a>
+      <a class="btn btn-line" href="demo-cafe/">شوف نموذج تجريبي</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>بيمشي إزاي</h2>
+    <div class="steps">
+      <div class="step"><h3>تبعتلي لينك صفحتك</h3><p>إنستجرام أو فيسبوك أو صور المنيو، واسم المشروع ورقم الواتساب.</p></div>
+      <div class="step"><h3>أبعتلك معاينة</h3><p>نسخة معمولة لمشروعك انت، في خلال ساعات. تعديل واحد مجاني.</p></div>
+      <div class="step"><h3>عجبك؟ ادفع ويشتغل</h3><p>تحوّل بإنستاباي، والموقع ينزل على لينكه في نفس اليوم.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>الأسعار</h2>
+    <div class="plans">
+      <div class="plan main"><h3>موقع المشروع</h3><span class="p">1,000 ج.م</span>
+        <ul><li>صفحة واحدة للموبايل، عربي و/أو إنجليزي</li><li>منيو أو كتالوج، والطلب بيتكتب لوحده في رسالة واتساب</li><li>الخريطة والمواعيد وأرقام التواصل</li><li>جاهز في نفس اليوم على لينك تقدر تشاركه</li></ul></div>
+      <div class="plan"><h3>إضافة: إعداد واتساب بيزنس</h3><span class="p">+300 ج.م</span>
+        <ul><li>نصوص الكتالوج، والرد الترحيبي، ورسالة الغياب، والردود السريعة</li></ul></div>
+      <div class="plan"><h3>محتوى شهري</h3><span class="p">1,500 ج.م / شهر</span>
+        <ul><li>بوستات وكابشنز بالمصري للشهر كله، وتحديث المنيو والأسعار على الموقع</li></ul></div>
+      <div class="plan"><h3>سي في + لينكدإن (ATS)</h3><span class="p">400 ج.م</span>
+        <ul><li>سي في مكتوب عشان يعدّي أنظمة الفرز، وعنوان ونبذة لينكدإن، Word وPDF في نفس اليوم</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pay">
+      <h2>الدفع</h2>
+      <p>بعد ما تشوف المعاينة وتوافق: <b>إنستاباي</b> (تفاصيل التحويل بتتبعتلك على الواتساب)</p>
+      <p>أو بالكارت: <a href="https://whop.com/checkout/plan_zZ6gxFcwnb20I">الموقع</a> · <a href="https://whop.com/checkout/plan_vrKe7JuvDAesT">السي في</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>Same-Day Studio · القاهرة</footer>
+</body>
+</html>
