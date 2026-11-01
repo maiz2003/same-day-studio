@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Plant Corner | ورد وبوكيهات في الزمالك</title>
+<meta name="description" content="بوكيهات وبوكسات ورد ونباتات وهدايا في الزمالك. اختار واطلب على واتساب.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@1,600&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f3f1ea;--card:#fffdf8;--ink:#1d2a22;--muted:#6b7468;--line:#e4dfd2;--green:#1f3d2b;--green2:#2f5d3f;--blush:#c2577a;--wa:#1f9d55;--photo:#f6f3ec}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding-bottom:100px}
+  a{color:inherit}
+  .pv{background:#111;color:#f3f1ea;font-size:.82rem;text-align:center;padding:.5rem 1rem;position:sticky;top:0;z-index:20}
+  .pv b{color:#f7c6d4}
+  .wrap{max-width:960px;margin:0 auto;padding:0 16px}
+
+  header.hero{background:radial-gradient(120% 120% at 100% 0%,#3d7350 0%,var(--green2) 35%,var(--green) 100%);color:#f6f3ea;padding:44px 0 56px;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+  .brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:clamp(2.4rem,9vw,3.6rem);line-height:1;direction:ltr;text-align:right}
+  .tagline{font-family:"Amiri",serif;font-size:clamp(1.25rem,5vw,1.6rem);margin-top:.6rem;color:#e9e3d3}
+  .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+  .chip{font-size:.85rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:.25rem .75rem;border-radius:99px}
+  .btns{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}
+  .btn{display:inline-flex;align-items:center;gap:.45rem;padding:.8rem 1.25rem;border-radius:14px;font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+  .btn-wa{background:var(--wa);color:#fff}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff}
+  .fan{position:relative;height:250px}
+  .fan figure{position:absolute;width:150px;height:200px;background:#fffdf8;border-radius:18px;padding:8px;box-shadow:0 18px 40px rgba(0,0,0,.28);display:grid;place-items:center}
+  .fan img{max-width:100%;max-height:184px;object-fit:contain;border-radius:12px}
+  .fan figure:nth-child(1){right:0;top:30px;transform:rotate(6deg)}
+  .fan figure:nth-child(2){right:28%;top:0;z-index:2}
+  .fan figure:nth-child(3){left:0;top:36px;transform:rotate(-7deg)}
+
+  .bar{position:sticky;top:var(--pvh,0);z-index:10;background:rgba(243,241,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .tabs{display:flex;gap:.5rem;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+  .tabs button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:.45rem 1rem;border-radius:99px;font:inherit;font-weight:500;cursor:pointer}
+  .tabs button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+
+  main section{padding:22px 0 8px;scroll-margin-top:calc(var(--pvh,0px) + 64px)}
+  h2{font-family:"Amiri",serif;font-size:1.7rem;color:var(--green);margin-bottom:.8rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(170px,100%),1fr));gap:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+  .ph{height:190px;background:var(--photo);display:grid;place-items:center;padding:10px}
+  .ph img{max-width:100%;max-height:170px;object-fit:contain;border-radius:10px}
+  .info{padding:10px 12px 12px;display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+  .info b{font-size:.98rem;line-height:1.45;overflow-wrap:anywhere}
+  .en{font-size:.74rem;color:var(--muted);direction:ltr;text-align:right;overflow-wrap:anywhere}
+  .desc{font-size:.8rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
+  .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;margin-top:auto;padding-top:8px}
+  .price{font-weight:700;color:var(--blush);white-space:nowrap}
+  .add{border:0;background:var(--green);color:#fff;border-radius:12px;height:36px;padding:0 .8rem;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}
+  .step{display:flex;align-items:center;background:var(--green);border-radius:12px;color:#fff}
+  .step button{width:34px;height:36px;border:0;background:none;color:#fff;font-size:1.2rem;cursor:pointer}
+  .step span{min-width:1.4rem;text-align:center;font-weight:700}
+
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+  .box h3{font-size:1rem;margin-bottom:.3rem}
+  .box p{color:var(--muted);font-size:.92rem}
+  iframe{width:100%;height:100%;min-height:220px;border:0;border-radius:18px}
+  footer{color:var(--muted);font-size:.82rem;text-align:center;padding:28px 16px 8px}
+
+  .cart{position:fixed;inset:auto 0 0 0;background:var(--green);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:.8rem;transform:translateY(110%);transition:transform .25s ease;z-index:30}
+  .cart.on{transform:none}
+  .cart span{font-size:.92rem}
+  @media (max-width:640px){
+    .hero .wrap{grid-template-columns:1fr}
+    .fan{height:210px;margin-top:6px}
+    .fan figure{width:120px;height:165px}
+    .fan img{max-height:149px}
+    .visit{grid-template-columns:1fr}
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .ph{height:170px}
+    .ph img{max-height:150px}
+  }
+  @media (prefers-reduced-motion:reduce){.cart{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="pv" id="pv" hidden><b>معاينة</b> · الطلب على واتساب بيشتغل بعد التفعيل</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="brand">The Plant Corner</div>
+      <div class="tagline">ورد وبوكيهات ونباتات وهدايا في قلب الزمالك</div>
+      <div class="chips"><span class="chip">★ 4.8 على جوجل ماب</span><span class="chip">بوكيهات · بوكسات · نباتات · بالونات</span></div>
+      <div class="btns">
+        <a class="btn btn-wa" id="waTop" href="#">اطلب على واتساب</a>
+        <a class="btn btn-ghost" href="#catalog">تصفح الكتالوج</a>
+      </div>
+    </div>
+    <div class="fan" id="fan" aria-hidden="true"></div>
+  </div>
+</header>
+
+<nav class="bar" aria-label="أقسام الكتالوج"><div class="wrap"><div class="tabs" id="tabs"></div></div></nav>
+
+<main class="wrap" id="catalog"></main>
+
+<section class="wrap" style="padding:28px 16px 0">
+  <h2>زورونا</h2>
+  <div class="visit">
+    <div class="box">
+      <h3>العنوان</h3>
+      <p>حديقة الزهرية، 1 شارع الجزيرة، الزمالك، القاهرة</p>
+      <p style="margin-top:.6rem"><a href="https://www.google.com/maps/search/?api=1&query=30.0466202,31.2269539" target="_blank" rel="noopener">افتح في خرائط جوجل ←</a></p>
+    </div>
+    <iframe title="خريطة The Plant Corner" loading="lazy" src="https://www.google.com/maps?q=30.0466202,31.2269539&z=16&output=embed"></iframe>
+  </div>
+</section>
+
+<footer>© The Plant Corner · الأسعار بالجنيه المصري</footer>
+
+<div class="cart" id="cart" aria-live="polite">
+  <span id="sum"></span>
+  <a class="btn btn-wa" id="waOrder" href="#">ابعت الطلب على واتساب</a>
+</div>
+
+<script>
+const ITEMS = [{"ar": "بوكس LOVE", "en": "LOVE Rose & Chocolate Box", "d": "تنسيق رومانسي فاخر من الورد الأحمر الطبيعي داخل بوكس LOVE أنيق، مع قلب من شوكولاتة فيريرو روشي.", "p": 1800, "c": "بوكيهات وبوكسات", "img": "img/p1.jpg"}, {"ar": "وردة للأبد", "en": "Forever Rose", "d": "وردة طبيعية فاخرة من الإكوادور، تمت معالجتها بتقنية خاصة للحفاظ على جمالها ومظهرها الطبيعي لفترة طويلة، وتُقدم بتغليف أنيق لتكون هدية مميزة وذكرى تدوم.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p2.jpg"}, {"ar": "بوكيه الألوان المبهجة", "en": "Fresh Colors Bouquet", "d": "بوكيه مميز بتشكيلة من الزهور الطبيعية الملونة بدرجات الأصفر والأخضر والوردي، بتنسيق عصري مليء بالحيوية والبهجة.", "p": 850, "c": "بوكيهات وبوكسات", "img": "img/p3.jpg"}, {"ar": "بوكس الورد والشوكولاتة", "en": "Luxury Rose & Chocolate Box", "d": "بوكس فاخر يجمع بين الورد الأحمر الطبيعي وشوكولاتة فيريرو روشي، بتصميم أنيق وإضاءة رومانسية للمناسبات الخاصة.", "p": 1900, "c": "بوكيهات وبوكسات", "img": "img/p4.jpg"}, {"ar": "بوكيه الأناقة البنفسجية", "en": "Purple Elegance Bouquet", "d": "تنسيق أنيق من زهور الكريزانثيمم باللونين البنفسجي والأبيض، مع لمسات خضراء وتغليف بنفسجي راقٍ.", "p": 750, "c": "بوكيهات وبوكسات", "img": "img/p5.jpg"}, {"ar": "تنسيق الزهور الكبير", "en": "Grand Flower Arrangement", "d": "تنسيق كبير وفخم من الورد الأحمر والزهور الصفراء والبنفسجية والبيضاء مع الخضرة الطبيعية، مناسب للتهنئة والاستقبال والمناسبات.", "p": 2000, "c": "بوكيهات وبوكسات", "img": "img/p6.jpg"}, {"ar": "تنسيق زهور فاخر", "en": "Luxury Mixed Flower Arrangement", "d": "تنسيق فاخر وكبير من الليليوم والأنثوريوم والورد والكريزانثيمم والزهور الموسمية مع خضرة طبيعية غنية.", "p": 3700, "c": "بوكيهات وبوكسات", "img": "img/p7.jpg"}, {"ar": "تنسيق أبيض للمواساة", "en": "White Sympathy Arrangement", "d": "تنسيق هادئ وأنيق بدرجات الأبيض من الورد والكريزانثيمم والزهور البيضاء المتنوعة مع أوراق خضراء طبيعية.", "p": 1700, "c": "بوكيهات وبوكسات", "img": "img/p8.jpg"}, {"ar": "بوكيه كلاسيك مشكل", "en": "Classic Mixed Bouquet", "d": "بوكيه عصري من الكريزانثيمم الأحمر والأبيض والأخضر مع خضرة طبيعية وتغليف أنيق.", "p": 800, "c": "بوكيهات وبوكسات", "img": "img/p9.jpg"}, {"ar": "بوكيه نبيتي وأخضر", "en": "Burgundy & Green Bouquet", "d": "بوكيه مميز من الكريزانثيمم بدرجات النبيتي والأبيض والأخضر، منسق مع خضرة طبيعية وتغليف عصري.", "p": 850, "c": "بوكيهات وبوكسات", "img": "img/p10.jpg"}, {"ar": "بوكيه استوائي نبيتي", "en": "Tropical Burgundy Bouquet", "d": "تنسيق جريء يجمع الكريزانثيمم النبيتي والأبيض والأخضر مع أوراق المونستيرا والخضرة الاستوائية.", "p": 950, "c": "بوكيهات وبوكسات", "img": "img/p11.jpg"}, {"ar": "بوكيه كريزانثيمم وردي", "en": "Pink Chrysanthemum Bouquet", "d": "بوكيه مبهج من الكريزانثيمم بدرجات الوردي والبنفسجي والأبيض مع لمسات خضراء وتغليف كرافت أنيق.", "p": 900, "c": "بوكيهات وبوكسات", "img": "img/p12.jpg"}, {"ar": "بوكيه ورد أحمر وأخضر", "en": "Red Rose & Green Chrysanthemum Bouquet", "d": "بوكيه أنيق يجمع بين الورد الأحمر والكريزانثيمم الأخضر مع خضرة طبيعية وتغليف مزخرف مميز.", "p": 1050, "c": "بوكيهات وبوكسات", "img": "img/p13.jpg"}, {"ar": "جل مكافحة الصراصير", "en": "Source Kill Max", "d": "جل جاهز للاستخدام لمكافحة الصراصير، في عبوة سرنجة لسهولة التطبيق في الشقوق والزوايا والأماكن المستهدفة.", "p": 250, "c": "مستلزمات حدائق", "img": "img/p14.jpg"}, {"ar": "تيبرا SC", "en": "Tebra SC", "d": "مبيد حشري مركز معلق لمكافحة مجموعة من الآفات المنزلية والحشرية، ويُستخدم وفقًا لتعليمات الملصق المسجل على العبوة.", "p": 300, "c": "مستلزمات حدائق", "img": "img/p15.jpg"}, {"ar": "دلتا وان 5%", "en": "Delta One 5%", "d": "مبيد حشري مركز للاستخدام في برامج مكافحة الآفات، ويُستخدم بالجرعات وطريقة التطبيق الموضحة على العبوة.", "p": 250, "c": "مستلزمات حدائق", "img": "img/p16.jpg"}, {"ar": "دراسينا ماسنجانا", "en": "Dracaena Massangeana", "d": "نبات دراسينا داخلي مميز مزروع في أصيص سيراميك أبيض، مناسب للمكاتب والمنازل والهدايا.", "p": 650, "c": "نباتات", "img": "img/p17.jpg"}, {"ar": "تنسيق لاكي بامبو", "en": "Lucky Bamboo Arrangement", "d": "تنسيق أنيق من سيقان اللاكي بامبو داخل فازة زجاجية مربعة، مناسب للديكور الداخلي والهدايا.", "p": 1200, "c": "نباتات", "img": "img/p18.jpg"}, {"ar": "فيبرونيل ستار", "en": "Fibronil Star", "d": "مبيد حشري للاستخدام في برامج مكافحة الحشرات المنزلية والآفات المستهدفة، وفقًا لتعليمات الاستخدام المدونة على العبوة.", "p": 300, "c": "مستلزمات حدائق", "img": "img/p19.jpg"}, {"ar": "بالون رقم فضي", "en": "Silver Number Balloon", "d": "بالون فويل على شكل رقم باللون الفضي، مناسب لأعياد الميلاد والاحتفالات والمناسبات.", "p": 150, "c": "بالونات", "img": "img/p20.jpg"}, {"ar": "بالون رقم ذهبي", "en": "Gold Number Balloon", "d": "بالون فويل على شكل رقم باللون الذهبي، مناسب لأعياد الميلاد والاحتفالات والمناسبات.", "p": 150, "c": "بالونات", "img": "img/p21.jpg"}, {"ar": "مصيدة لاصقة للفئران", "en": "Mouse & Rat Glue Traps", "d": "مصيدة غراء جاهزة للاستخدام لمكافحة الفئران والقوارض في الأماكن الداخلية.", "p": 120, "c": "مستلزمات حدائق", "img": "img/p22.jpg"}, {"ar": "بالون رقم 1 فضي", "en": "Silver Number 1 Balloon", "d": "بالون فويل كبير على شكل رقم 1 باللون الفضي، مناسب لتنسيقات أعياد الميلاد والحفلات.", "p": 150, "c": "بالونات", "img": "img/p23.jpg"}, {"ar": "بوكيه جيبسوفيلا أبيض", "en": "Gypsophila Bouquet", "d": "بوكيه ناعم وأنيق من زهور الجيبسوفيلا البيضاء، مناسب للهدايا والمناسبات والتنسيقات الراقية.", "p": 800, "c": "بوكيهات وبوكسات", "img": "img/p24.jpg"}, {"ar": "بوكيه عروسة ورد أحمر", "en": "Red Rose Bridal Bouquet", "d": "بوكيه عروسة كلاسيكي من الورد الأحمر مع إطار من الجيبسوفيلا البيضاء وتشطيب ساتان أنيق.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p25.jpg"}, {"ar": "بالون رقم 1 ذهبي", "en": "Gold Number 1 Balloon", "d": "بالون فويل كبير على شكل رقم 1 باللون الذهبي، مناسب لأعياد الميلاد والاحتفالات.", "p": 150, "c": "بالونات", "img": "img/p26.jpg"}, {"ar": "بوكيه عروسة ورد أبيض", "en": "White Rose Bridal Bouquet", "d": "بوكيه عروسة أنيق من الورد الأبيض الطبيعي مع لمسات من الجيبسوفيلا وتشطيب كلاسيكي راقٍ.", "p": 2200, "c": "بوكيهات وبوكسات", "img": "img/p27.jpg"}];
+const CATS = ["بوكيهات وبوكسات", "نباتات", "بالونات", "مستلزمات حدائق"];
+const WA_NUMBER = "";   // client's WhatsApp, e.g. "2010xxxxxxxx", set on activation
+const PREVIEW = true;   // true = preview banner + ordering locked until the first payment
+const FEATURED = [0, 6, 24]; // hero photos by catalog index: LOVE box, luxury arrangement, red bridal
+
+const money = n => n.toLocaleString("en-US") + " ج.م";
+const cart = {};
+const pv = document.getElementById("pv");
+pv.hidden = !PREVIEW;
+document.documentElement.style.setProperty("--pvh", (PREVIEW ? pv.offsetHeight : 0) + "px");
+
+function waLink(text){
+  return PREVIEW ? "javascript:alert('دي معاينة: الطلب على واتساب هيشتغل بعد تفعيل الموقع')"
+                 : `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+document.getElementById("waTop").href = waLink("أهلًا The Plant Corner، عايز أطلب 🌷");
+
+document.getElementById("fan").innerHTML = FEATURED.map(i =>
+  `<figure><img src="${ITEMS[i].img}" alt=""></figure>`).join("");
+
+const main = document.getElementById("catalog"), tabs = document.getElementById("tabs");
+main.innerHTML = CATS.map((c, ci) => `
+  <section id="c${ci}"><h2>${c}</h2><div class="grid">${
+    ITEMS.map((it, i) => it.c !== c ? "" : `
+      <article class="card">
+        <div class="ph"><img src="${it.img}" alt="${it.ar}" loading="lazy"></div>
+        <div class="info">
+          <b>${it.ar}</b><span class="en">${it.en}</span>
+          <span class="desc">${it.d}</span>
+          <div class="foot"><span class="price">${money(it.p)}</span><span class="ctl" data-i="${i}"></span></div>
+        </div>
+      </article>`).join("")}</div></section>`).join("");
+
+tabs.innerHTML = CATS.map((c, ci) => `<button aria-pressed="${ci === 0}" data-t="c${ci}">${c}</button>`).join("");
+tabs.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  tabs.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  document.getElementById(b.dataset.t).scrollIntoView({behavior: "smooth"});
+});
+
+function renderCtl(i){
+  const q = cart[i] || 0, el = main.querySelector(`.ctl[data-i="${i}"]`);
+  el.innerHTML = q ? `<span class="step"><button data-a="-1" aria-label="شيل واحد">−</button><span>${q}</span><button data-a="1" aria-label="زوّد واحد">+</button></span>`
+                   : `<button class="add" data-a="1" aria-label="أضف ${ITEMS[i].ar}">+ أضف</button>`;
+}
+ITEMS.forEach((_, i) => renderCtl(i));
+
+main.addEventListener("click", e => {
+  const b = e.target.closest("button[data-a]"); if (!b) return;
+  const i = +b.closest(".ctl").dataset.i;
+  cart[i] = Math.max(0, (cart[i] || 0) + +b.dataset.a);
+  if (!cart[i]) delete cart[i];
+  renderCtl(i);
+  const lines = Object.entries(cart).map(([k, q]) => [ITEMS[k], q]);
+  const total = lines.reduce((s, [it, q]) => s + it.p * q, 0);
+  const count = lines.reduce((s, [, q]) => s + q, 0);
+  document.getElementById("sum").textContent = `${count} منتج · ${money(total)}`;
+  document.getElementById("waOrder").href = waLink(
+    "طلب جديد من موقع The Plant Corner 🌷\n" +
+    lines.map(([it, q]) => `• ${q} × ${it.ar} (${money(it.p * q)})`).join("\n") +
+    `\nالإجمالي: ${money(total)}\n\nالاسم:\nالعنوان:\nميعاد التوصيل:`);
+  document.getElementById("cart").classList.toggle("on", count > 0);
+});
+</script>
+</body>
+</html>
