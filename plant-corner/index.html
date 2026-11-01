@@ -135,9 +135,10 @@ const DATA = await (await fetch("data.json", {cache: "no-cache"})).json();
 const ITEMS = DATA.items.filter(it => !it.hide);
 const ORDER = ["بوكيهات وبوكسات", "نباتات", "بالونات", "مكافحة آفات"];
 const CATS = [...ORDER, ...new Set(ITEMS.map(it => it.c))].filter((c, i, a) => a.indexOf(c) === i && ITEMS.some(it => it.c === c));
-const WA_NUMBER = "";   // client's WhatsApp, e.g. "2010xxxxxxxx", set on activation
-const PREVIEW = true;   // true = preview banner + ordering locked until the first payment
+const WA_NUMBER = "201006150015"; // client's WhatsApp, e.g. "2010xxxxxxxx", set on activation
+const PREVIEW = false;  // true = preview banner + ordering locked until the first payment
 
+const esc = v => String(v ?? "").replace(/[&<>"']/g, ch => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"})[ch]);  // owner-typed text from the panel
 const money = n => n.toLocaleString("en-US") + " ج.م";
 const cart = {};
 const pv = document.getElementById("pv");
@@ -154,24 +155,24 @@ if (DATA.delivery) document.querySelector("#delivery p").textContent = DATA.deli
 
 const featured = ITEMS.filter(it => it.feat);
 document.getElementById("fan").innerHTML = (featured.length ? featured : ITEMS).slice(0, 3).map(it =>
-  `<figure><img src="${it.img}" alt=""></figure>`).join("");
+  `<figure><img src="${esc(it.img)}" alt=""></figure>`).join("");
 
 const main = document.getElementById("catalog"), tabs = document.getElementById("tabs");
 main.innerHTML = CATS.map((c, ci) => `
-  <section id="c${ci}"><h2>${c}</h2><div class="grid">${
+  <section id="c${ci}"><h2>${esc(c)}</h2><div class="grid">${
     ITEMS.map((it, i) => it.c !== c ? "" : `
       <article class="card">
-        <div class="ph"><img src="${it.img}" alt="${it.ar}" loading="lazy"></div>
+        <div class="ph"><img src="${esc(it.img)}" alt="${esc(it.ar)}" loading="lazy"></div>
         <div class="info">
-          <b>${it.ar}</b><span class="en">${it.en}</span>
-          <span class="desc">${it.d}</span>
+          <b>${esc(it.ar)}</b><span class="en">${esc(it.en)}</span>
+          <span class="desc">${esc(it.d)}</span>
           ${it.n ? `<span class="meta">🌸 ${it.n === 1 ? "وردة واحدة" : `حوالي ${it.n} زهرة`}</span>` : ""}
           ${it.dg ? `<label class="dg">اختار الرقم <select data-i="${i}" aria-label="رقم البالون">${[...Array(10).keys()].map(d => `<option>${d}</option>`).join("")}</select></label>` : ""}
           <div class="foot"><span class="price">${money(it.p)}</span><span class="ctl" data-i="${i}"></span></div>
         </div>
       </article>`).join("")}</div></section>`).join("");
 
-tabs.innerHTML = CATS.map((c, ci) => `<button aria-pressed="${ci === 0}" data-t="c${ci}">${c}</button>`).join("");
+tabs.innerHTML = CATS.map((c, ci) => `<button aria-pressed="${ci === 0}" data-t="c${ci}">${esc(c)}</button>`).join("");
 tabs.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   tabs.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
@@ -183,7 +184,7 @@ const keyOf = i => { const s = main.querySelector(`select[data-i="${i}"]`); retu
 function renderCtl(i){
   const q = cart[keyOf(i)] || 0, el = main.querySelector(`.ctl[data-i="${i}"]`);
   el.innerHTML = q ? `<span class="step"><button data-a="-1" aria-label="شيل واحد">−</button><span>${q}</span><button data-a="1" aria-label="زوّد واحد">+</button></span>`
-                   : `<button class="add" data-a="1" aria-label="أضف ${ITEMS[i].ar}">+ أضف</button>`;
+                   : `<button class="add" data-a="1" aria-label="أضف ${esc(ITEMS[i].ar)}">+ أضف</button>`;
 }
 ITEMS.forEach((_, i) => renderCtl(i));
 
@@ -201,11 +202,11 @@ function updateCart(){
   const lines = Object.entries(cart).map(([k, q]) => { const [i, d] = k.split("#"); return [ITEMS[i], q, d]; });
   const total = lines.reduce((s, [it, q]) => s + it.p * q, 0);
   const count = lines.reduce((s, [, q]) => s + q, 0);
-  document.getElementById("sum").textContent = `${count} منتج · ${money(total)}`;
+  document.getElementById("sum").textContent = `${count === 1 ? "منتج واحد" : count === 2 ? "منتجين" : count <= 10 ? `${count} منتجات` : `${count} منتج`} · ${money(total)}`;
   document.getElementById("waOrder").href = waLink(
     "طلب جديد من موقع The Plant Corner 🌷\n" +
     lines.map(([it, q, d]) => `• ${q} × ${it.ar}${d !== undefined ? ` (رقم ${d})` : ""} (${money(it.p * q)})`).join("\n") +
-    `\nالإجمالي: ${money(total)}\n\nالاسم:\nالعنوان:\nميعاد التوصيل:`);
+    `\nالإجمالي: ${money(total)}\n\nالاسم:\nالمنطقة:\nالعنوان:\nميعاد التوصيل:`);
   document.getElementById("cart").classList.toggle("on", count > 0);
 }
 </script>
