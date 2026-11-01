@@ -107,6 +107,8 @@ const MENU = {
   "مخبوزات": [["كرواسون زبدة","",55],["كرواسون زعتر وجبنة","",75],["كوكيز شوكولاتة","",45]]
 };
 const WA_NUMBER = ""; // client's number goes here, e.g. "2010xxxxxxxx"
+const PREVIEW = false; // client previews: true = preview banner + WhatsApp ordering locked until the first payment
+if (PREVIEW) document.querySelector(".demo").textContent = "معاينة، مش النسخة النهائية · الطلب على واتساب بيشتغل بعد تفعيل الموقع";
 const cart = {};
 const tabs = document.querySelector(".tabs"), list = document.getElementById("list");
 
@@ -123,7 +125,10 @@ Object.keys(MENU).forEach((cat,i) => {
   tabs.append(b); if (!i) render(cat);
 });
 
-function waLink(text){ return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`; }
+function waLink(text){
+  return PREVIEW ? "javascript:alert('دي معاينة: الطلب على واتساب هيشتغل بعد تفعيل الموقع')"
+                 : `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+}
 document.getElementById("waTop").href = waLink("أهلًا، عايز أطلب من بُنّ وياسمين");
 
 list.addEventListener("click", e => {
