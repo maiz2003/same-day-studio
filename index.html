@@ -2,100 +2,156 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Same-Day Studio | موقع لمشروعك النهارده</title>
-<meta name="description" content="موقع موبايل لمشروعك بالمنيو والطلب على واتساب، تشوفه قبل ما تدفع وبيبقى جاهز في نفس اليوم.">
+<meta name="description" content="موقع موبايل لمشروعك فيه المنتجات وطلب على واتساب ولوحة تعديل سهلة، ملكك بالكامل. تشوف المعاينة ببلاش في نفس اليوم قبل ما تدفع.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="موقع لمشروعك النهارده، تشوفه الأول وبعدين تدفع">
+<meta property="og:description" content="كتالوج + طلب على واتساب + لوحة تعديل. معاينة ببلاش قبل الدفع.">
+<meta property="og:image" content="https://maiz2003.github.io/same-day-studio/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"></noscript>
 <style>
-  :root{--bg:#f6f7f9;--card:#fff;--ink:#14171c;--muted:#5d6672;--line:#e3e6eb;--brand:#1d4ed8;--wa:#1f9d55}
+  :root{--bg:#f6f7f9;--card:#fff;--ink:#14171c;--muted:#4f5864;--line:#dfe3e9;--brand:#1d4ed8;--wa:#157a42}
   *{box-sizing:border-box;margin:0;padding:0}
   [hidden]{display:none!important}
   body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
   .wrap{max-width:760px;margin:0 auto;padding:0 16px}
-  header{padding:56px 0 40px}
-  .logo{font-weight:700;letter-spacing:.02em;color:var(--brand)}
-  h1{font-size:clamp(2rem,7vw,3rem);line-height:1.25;margin:.8rem 0 .6rem}
-  .lead{color:var(--muted);font-size:1.08rem;max-width:40ch}
-  .btns{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}
-  .btn{display:inline-flex;align-items:center;padding:.75rem 1.2rem;border-radius:12px;font-weight:700;text-decoration:none}
+  .bar{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+  .logo{font-weight:700;color:var(--brand)}
+  .tog{min-height:44px;min-width:44px;padding:0 14px;border:1px solid var(--line);background:#fff;border-radius:10px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer}
+  header{padding-bottom:28px}
+  h1{font-size:clamp(1.8rem,7vw,2.7rem);line-height:1.3;margin:.6rem 0}
+  .lead{color:var(--muted);font-size:1.05rem}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:12px;font-weight:700;text-decoration:none}
   .btn-wa{background:var(--wa);color:#fff}
-  .btn-line{border:1px solid var(--line);background:var(--card);color:var(--ink)}
-  section{padding:32px 0}
-  h2{font-size:1.4rem;margin-bottom:1rem}
-  .steps{display:grid;gap:.8rem;grid-template-columns:repeat(3,1fr);counter-reset:s}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}
-  .step::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;margin-bottom:.4rem}
-  .step p{color:var(--muted);font-size:.93rem}
-  .plans{display:grid;gap:.8rem}
-  .plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem;display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;align-items:start}
-  .plan.main{border:2px solid var(--brand)}
-  .plan h3{font-size:1.08rem}
-  .plan .p{font-weight:700;font-size:1.15rem;white-space:nowrap}
-  .plan ul{grid-column:1/-1;color:var(--muted);font-size:.93rem;padding-inline-start:1.1rem;margin-top:.3rem}
-  .pay{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem}
-  .pay p{color:var(--muted)}
-  .pay b{color:var(--ink)}
-  .pay a{color:var(--brand)}
-  footer{color:var(--muted);font-size:.85rem;padding:32px 16px;text-align:center}
-  @media (max-width:600px){.steps{grid-template-columns:1fr}}
+  .btn-line{border:1.5px solid var(--brand);color:var(--brand);background:#fff}
+  section{padding:26px 0}
+  h2{font-size:1.35rem;margin-bottom:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  ul.ok{list-style:none}
+  ul.ok li{padding:6px 0;padding-inline-start:26px;position:relative}
+  ul.ok li::before{content:"✓";position:absolute;inset-inline-start:0;color:var(--wa);font-weight:700}
+  .cc{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .cc button{min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:inherit;font-weight:700;color:var(--ink);cursor:pointer}
+  .cc button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+  .plans{display:grid;gap:12px}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .plan.rec{border:2px solid var(--brand)}
+  .tag{display:inline-block;background:var(--brand);color:#fff;font-size:.8rem;font-weight:700;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+  .plan h3{font-size:1.15rem}
+  .price{font-size:1.5rem;font-weight:700;margin:4px 0}
+  .plan ul{color:var(--muted);padding-inline-start:20px;font-size:.95rem}
+  .note{color:var(--muted);font-size:.9rem;margin-top:10px}
+  ol.steps{list-style:none;counter-reset:s;display:grid;gap:10px}
+  ol.steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;padding-inline-start:58px;position:relative}
+  ol.steps li::before{content:counter(s);position:absolute;inset-inline-start:14px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+  summary{cursor:pointer;font-weight:700;padding:12px 14px;min-height:44px}
+  details p{padding:0 14px 14px;color:var(--muted)}
+  footer{color:var(--muted);font-size:.85rem;padding:28px 16px 90px;text-align:center}
+  .sticky{position:fixed;bottom:12px;inset-inline:16px;max-width:728px;margin:0 auto}
+  .sticky .btn{width:100%;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  [lang="en"]{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <div class="logo">Same-Day Studio</div>
-    <h1>موقع لمشروعك النهارده.<br>تشوفه الأول، وبعدين تدفع.</h1>
-    <p class="lead">موقع موبايل فيه المنيو أو المنتجات، وزرار طلب على واتساب، والعنوان والمواعيد. لينك واحد تحطه في البايو وتبعته لأي زبون.</p>
-    <div class="btns">
-      <a class="btn btn-wa" href="https://wa.me/201013623203?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%85%D9%88%D9%82%D8%B9%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A">كلمني على واتساب</a>
-      <a class="btn btn-line" href="demo-cafe/">شوف نموذج تجريبي</a>
-    </div>
+<div class="wrap bar"><div class="logo">Same-Day Studio</div></div>
+<main lang="ar" dir="rtl">
+<header class="wrap">
+  <h1>موقع لمشروعك النهارده.<br>تشوفه الأول، وبعدين تقرر.</h1>
+  <p class="lead">كتالوج منتجاتك بالأسعار، وسلة الزبون يبعت منها الطلب على واتساب، ولوحة تعديل سهلة. والموقع ملكك انت بالكامل.</p>
+  <div class="btns">
+    <a class="btn btn-wa" href="https://wa.me/201013623203?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%85%D8%B9%D8%A7%D9%8A%D9%86%D8%A9%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A">اطلب معاينة ببلاش على واتساب</a>
+    <a class="btn btn-line" href="https://maiz2003.github.io/same-day-studio/demo-cafe/">شوف النموذج التجريبي</a>
   </div>
 </header>
 
-<section>
-  <div class="wrap">
-    <h2>بيمشي إزاي</h2>
-    <div class="steps">
-      <div class="step"><h3>تبعتلي لينك صفحتك</h3><p>إنستجرام أو فيسبوك أو صور المنيو، واسم المشروع ورقم الواتساب.</p></div>
-      <div class="step"><h3>أبعتلك معاينة</h3><p>نسخة معمولة لمشروعك انت، في خلال ساعات، والمعاينة متاحة 48 ساعة. تعديل واحد مجاني.</p></div>
-      <div class="step"><h3>عجبك؟ اشترك ويشتغل</h3><p>تحوّل أول شهر بإنستاباي، والموقع ينزل على لينكه في نفس اليوم.</p></div>
-    </div>
-  </div>
-</section>
+<section><div class="wrap">
+  <h2>هتاخد إيه</h2>
+  <div class="card"><ul class="ok">
+    <li>موقع سريع معمول للموبايل بألوان اللوجو بتاعك</li>
+    <li>كتالوج منتجات بالصور والأسعار بالجنيه</li>
+    <li>سلة طلبات: الزبون يختار المنتجات والكمية، وتوصلك رسالة واتساب جاهزة فيها الطلب والإجمالي ومنطقة التوصيل</li>
+    <li>لوحة تحكم بالعربي تضيف منها المنتجات وتغيّر الأسعار بنفسك</li>
+    <li>لينك واحد تحطه في البايو وتبعته لأي زبون، وبيظهر بصورة لما يتبعت</li>
+    <li>دليل بالصور خطوة بخطوة</li>
+  </ul></div>
+</div></section>
 
-<section>
-  <div class="wrap">
-    <h2>الأسعار</h2>
-    <div class="plans">
-      <div class="plan main"><h3>موقع المشروع: اشتراك شهري</h3><span class="p">1,000 ج.م / شهر</span>
-        <ul><li>صفحة واحدة للموبايل، عربي و/أو إنجليزي</li><li>منيو أو كتالوج، والطلب بيتكتب لوحده في رسالة واتساب</li><li>الخريطة والمواعيد وأرقام التواصل</li><li>جاهز في نفس اليوم، ومن غير رسوم تأسيس</li><li>تغيير المنيو والأسعار في أي وقت (بيتنفذ خلال 24 ساعة) والاستضافة عليّا</li><li>تلغي في أي وقت: الموقع بيتقفل آخر الشهر المدفوع، أو تحتفظ بيه وتدفع 5,000 ناقص اللي دفعته (بحد أدنى 2,500) ويبقى ملكك</li></ul></div>
-      <div class="plan"><h3>أو: الموقع ملكك مرة واحدة</h3><span class="p">5,000 ج.م</span>
-        <ul><li>نفس الموقع، تدفع مرة واحدة ومن غير اشتراك. التعديلات بعد التسليم بتتحسب لوحدها</li></ul></div>
-      <div class="plan"><h3>إضافة: إعداد واتساب بيزنس</h3><span class="p">+300 ج.م</span>
-        <ul><li>نصوص الكتالوج، والرد الترحيبي، ورسالة الغياب، والردود السريعة</li></ul></div>
-      <div class="plan"><h3>محتوى شهري: سكريبتات وكابشنز</h3><span class="p">1,500 ج.م / شهر</span>
-        <ul><li>سكريبتات الفيديوهات والكابشنز بالمصري للشهر كله</li></ul></div>
-      <div class="plan"><h3>فيديوهات كاملة: تصوير ومونتاج</h3><span class="p">حسب المطلوب</span>
-        <ul><li>السعر بيتحدد حسب عدد الفيديوهات ونوع الشغل. كلمني على واتساب وأبعتلك عرض سعر</li></ul></div>
-      <div class="plan"><h3>سي في + لينكدإن (ATS)</h3><span class="p">400 ج.م</span>
-        <ul><li>سي في مكتوب عشان يعدّي أنظمة الفرز، وعنوان ونبذة لينكدإن، Word وPDF في نفس اليوم</li></ul></div>
-    </div>
-  </div>
-</section>
+<section><div class="wrap">
+  <h2>معاينة ببلاش في نفس اليوم</h2>
+  <div class="card"><p>ابعتلي لينك صفحتك على إنستجرام أو فيسبوك ورقم الواتساب. أجهزلك نسخة معاينة لمشروعك انت في خلال ساعات، ومعاها تعديل واحد ببلاش. المعاينة متاحة 48 ساعة، ومفيش أي التزام لو ماعجبتكش.</p></div>
+</div></section>
 
-<section>
-  <div class="wrap">
-    <div class="pay">
-      <h2>الدفع</h2>
-      <p>بعد ما تشوف المعاينة وتوافق: <b>إنستاباي</b> (تفاصيل التحويل بتتبعتلك على الواتساب)</p>
-      <p>أو بالكارت: <a href="https://whop.com/checkout/plan_2eYeMVxr1YY4w">الاشتراك الشهري</a> (بيتجدد لوحده) · <a href="https://whop.com/checkout/plan_hQnbZcnb4HRlX">مرة واحدة</a> · <a href="https://whop.com/checkout/plan_vrKe7JuvDAesT">السي في</a></p>
-    </div>
+<section><div class="wrap">
+  <h2>الباقات والأسعار</h2>
+  <div class="plans">
+    <div class="plan"><h3>بريميوم</h3><div class="price">17,500 ج.م</div>
+      <ul><li>كل اللي في باقة برو</li><li>محتوى أول شهر: 12 بوست جاهز (تصميم وكابشن)</li><li>4 فيديوهات قصيرة لمنتجاتك</li><li>12 صورة منتجات بشكل الاستوديو، من صور منتجاتك</li></ul></div>
+    <div class="plan rec"><span class="tag">ننصحك بيها</span><h3>برو</h3><div class="price">12,500 ج.م</div>
+      <ul><li>كل اللي في باقة ستارتر</li><li>الموقع عربي وإنجليزي</li><li>اختيارات المنتج (المقاس، اللون، الحجم) ومناطق التوصيل ومصاريفها</li><li>لحد 100 منتج في أقسام</li><li>دعم وتعديلات 30 يوم بعد التسليم</li></ul></div>
+    <div class="plan"><h3>ستارتر</h3><div class="price">9,500 ج.م</div>
+      <ul><li>موقع بلغة واحدة (عربي أو إنجليزي)</li><li>لحد 30 منتج، وسلة طلبات على واتساب</li><li>لوحة التعديل، وربط الدومين بتاعك، ودليل بالصور</li><li>الخريطة والمواعيد وأرقام التواصل</li></ul></div>
   </div>
-</section>
+  <p class="note">الأسعار دي شاملة التصميم والتنفيذ، ولو عندك ميزانية أو احتياج مختلف كلمني ونتفق على اللي يناسبك. الاستضافة على Cloudflare Pages ببلاش، على حساب باسمك. الدومين بتشتريه باسمك، وبيتكلف عادةً حوالي 10 لـ 15 دولار في السنة.</p>
+</div></section>
 
+<section><div class="wrap">
+  <h2>إدارة شهرية (اختياري)</h2>
+  <div class="plans">
+    <div class="plan"><h3>إدارة كاملة</h3><div class="price">16,000 ج.م / شهر</div><ul><li>المحتوى والريلز ونشرهم والرد على التعليقات</li></ul></div>
+    <div class="plan"><h3>ريلز</h3><div class="price">11,000 ج.م / شهر</div><ul><li>فيديوهات قصيرة جاهزة للنشر طول الشهر</li></ul></div>
+    <div class="plan"><h3>محتوى</h3><div class="price">8,000 ج.م / شهر</div><ul><li>بوستات وكابشنز بالمصري للشهر كله</li></ul></div>
+  </div>
+  <p class="note">التفاصيل وعدد البوستات والفيديوهات بتتكتب في عرض مكتوب قبل ما تبدأ، والأسعار قابلة للنقاش حسب احتياجك.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>الدفع</h2>
+  <div class="card"><ul class="ok">
+    <li><b>50% مقدم</b> لما توافق على المعاينة، و<b>50% عند التسليم</b> بعد ما تشوف الموقع شغال على الدومين بتاعك</li>
+    <li><b>إنستاباي</b> (تفاصيل التحويل بتتبعتلك على الواتساب)، أو <b>بالكارت</b> من صفحة دفع آمنة على Whop</li>
+  </ul></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>الموقع ملكك</h2>
+  <div class="card"><ul class="ok">
+    <li>الكود على حساب GitHub والموقع على حساب Cloudflare، الاتنين باسمك (ببلاش)</li>
+    <li>الدومين باسمك وعلى حسابك</li>
+    <li>لوحة التعديل بتدخلها بحسابك انت</li>
+    <li>أنا مجرد مساعد تقدر تشيله في أي وقت، ومفيش اشتراك شهري إجباري</li>
+  </ul></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>بنشتغل إزاي، في 4 خطوات</h2>
+  <ol class="steps">
+    <li><b>تبعتلي لينك صفحتك</b><br>إنستجرام أو فيسبوك ورقم الواتساب.</li>
+    <li><b>أبعتلك المعاينة</b><br>في نفس اليوم، ومعاها تعديل ببلاش.</li>
+    <li><b>توافق وتدفع 50%</b><br>إنستاباي أو كارت، وبعدها أربط الموقع بحسابك والدومين.</li>
+    <li><b>أسلّمك الموقع</b><br>ومعاه لوحة التعديل والدليل بالصور، وتدفع الـ 50% الباقيين.</li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2>أسئلة بتتسأل كتير</h2>
+  <details><summary>المعاينة ببلاش بجد؟</summary><p>أيوه. مش هتدفع حاجة قبل ما تشوف نسخة مشروعك وتوافق عليها.</p></details>
+  <details><summary>ده متجر بدفع أونلاين؟</summary><p>لأ. ده كتالوج بيبعت الطلب على واتساب، وانت بتتفق مع الزبون على الدفع والتوصيل زي ما بتعمل دلوقتي.</p></details>
+  <details><summary>محتاج أفهم في التكنولوجيا؟</summary><p>لأ. لوحة التعديل سهلة، وهبعتلك دليل بالصور لكل خطوة: عمل حسابين GitHub وCloudflare، وربط الدومين، وإضافة منتج.</p></details>
+  <details><summary>فيه مصاريف شهرية؟</summary><p>مفيش اشتراك شهري ليّا. المصروف الوحيد بعد التسليم هو تجديد الدومين كل سنة.</p></details>
+  <details><summary>بياخد وقت قد إيه؟</summary><p>المعاينة في نفس اليوم. الموقع النهائي في خلال يوم شغل بعد الدفعة الأولى والمحتوى، ومحتوى بريميوم بيتسلم على مدار أول شهر.</p></details>
+  <details><summary>النموذج التجريبي ده محل حقيقي؟</summary><p>لأ. ده كافيه تخيّلي معمول عشان تشوف شكل الموقع وطريقة الطلب.</p></details>
+</div></section>
+</main>
 <footer>Same-Day Studio · القاهرة</footer>
+<div class="sticky"><a class="btn btn-wa" href="https://wa.me/201013623203?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%85%D8%B9%D8%A7%D9%8A%D9%86%D8%A9%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A">واتساب: معاينة ببلاش</a></div>
 </body>
 </html>
